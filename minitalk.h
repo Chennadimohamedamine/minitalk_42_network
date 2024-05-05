@@ -6,7 +6,7 @@
 /*   By: mochenna <mochenna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 01:59:03 by mochenna          #+#    #+#             */
-/*   Updated: 2024/05/05 01:16:08 by mochenna         ###   ########.fr       */
+/*   Updated: 2024/05/05 01:27:41 by mochenna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,6 @@
 #include <signal.h>
 
 int	convertint(char *str);
+void printstr(char *str);
+void printint(int i);
 #endif

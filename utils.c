@@ -6,7 +6,7 @@
 /*   By: mochenna <mochenna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 06:28:21 by mochenna          #+#    #+#             */
-/*   Updated: 2024/05/05 01:15:21 by mochenna         ###   ########.fr       */
+/*   Updated: 2024/05/05 01:27:30 by mochenna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,10 @@ void printstr(char *str)
 	i = 0;
 	while (str[i])
 		write(1,&str[i++],1);	
+}
+void printint(int i)
+{
+	if (i > 9)
+		printint(i / 10);
+	write(1,&"0123456789"[i % 10],1);
 }
