@@ -6,11 +6,11 @@
 /*   By: mochenna <mochenna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 01:56:02 by mochenna          #+#    #+#             */
-/*   Updated: 2024/03/12 02:43:08 by mochenna         ###   ########.fr       */
+/*   Updated: 2024/05/05 01:15:44 by mochenna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitk.h"
+#include "minitalk.h"
 
 int main(int ac, char **av)
 {
@@ -18,7 +18,7 @@ int main(int ac, char **av)
      
     if (ac != 3)
     {
-        write(1,"have error\n",11);
+        write(1,"write like this [pid server] [message]\n",40);
         exit(1);
     }
     r = convertint(av[1]);

@@ -6,7 +6,7 @@
 /*   By: mochenna <mochenna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 06:28:21 by mochenna          #+#    #+#             */
-/*   Updated: 2024/03/08 00:04:58 by mochenna         ###   ########.fr       */
+/*   Updated: 2024/05/05 01:15:21 by mochenna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,12 @@ int	convertint(char *str)
 		r += str[i++] - 48;
 	}
 	return (r * s);
+}
+void printstr(char *str)
+{
+	int i;
+
+	i = 0;
+	while (str[i])
+		write(1,&str[i++],1);	
 }
