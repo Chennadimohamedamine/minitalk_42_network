@@ -6,7 +6,7 @@
 /*   By: mochenna <mochenna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 01:59:03 by mochenna          #+#    #+#             */
-/*   Updated: 2024/05/08 16:20:58 by mochenna         ###   ########.fr       */
+/*   Updated: 2024/05/08 23:27:31 by mochenna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,5 @@
 int		convertint(char *str);
 void	printstr(char *str);
 void	printint(int i);
+void	send_message(char *s, int pid);
 #endif

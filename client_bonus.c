@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   client.c                                           :+:      :+:    :+:   */
+/*   client_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mochenna <mochenna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/10 01:56:02 by mochenna          #+#    #+#             */
-/*   Updated: 2024/05/08 23:28:19 by mochenna         ###   ########.fr       */
+/*   Created: 2024/05/08 16:25:24 by mochenna          #+#    #+#             */
+/*   Updated: 2024/05/08 23:37:04 by mochenna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,15 +32,21 @@ void	check(int c, char *s)
 		i++;
 	}
 }
+void handling(int sig)
+{
+	(void)sig;
+	printstr("all good\n");
+}
 
 int	main(int ac, char **av)
 {
-	int	pid;
-
+	int					pid;
+	
 	check(ac, av[1]);
+	signal(SIGUSR2, handling);
 	pid = convertint(av[1]);
 	if (pid > MAX_PID)
 		return (1);
-	send_message(av[2],pid);
+	send_message(av[2], pid);
 	return (0);
 }
