@@ -6,7 +6,7 @@
 /*   By: mochenna <mochenna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 01:59:03 by mochenna          #+#    #+#             */
-/*   Updated: 2024/05/05 01:27:41 by mochenna         ###   ########.fr       */
+/*   Updated: 2024/05/07 21:17:35 by mochenna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,10 @@
 #include <string.h>
 #include <fcntl.h>
 #include <signal.h>
+
+
+#   define MAX_PID 99998
+// #define MAX_PID 99998
 
 int	convertint(char *str);
 void printstr(char *str);

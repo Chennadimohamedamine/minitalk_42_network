@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "bitset": "c",
+        "_pthread_attr_t.h": "c",
+        "_mcontext.h": "c"
+    }
+}
