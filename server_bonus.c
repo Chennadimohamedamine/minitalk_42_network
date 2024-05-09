@@ -6,7 +6,7 @@
 /*   By: mochenna <mochenna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 16:25:27 by mochenna          #+#    #+#             */
-/*   Updated: 2024/05/08 23:37:50 by mochenna         ###   ########.fr       */
+/*   Updated: 2024/05/09 11:49:46 by mochenna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	handling_signal(int signal, siginfo_t *info, void *m)
 	{
 		write(1, &c, 1);
 		if (c == 0)
-			kill(info->si_pid, SIGUSR2);
+			kill(info->si_pid, SIGUSR1);
 		bit = 0;
 		c = 0;
 	}
@@ -44,7 +44,8 @@ int	main(void)
 	struct sigaction	sa;
 
 	pid = getpid();
-
+	sa.sa_sigaction = handling_signal;
+	sa.sa_flags = SA_SIGINFO;
 	printstr("pid ==> ");
 	printint(pid);
 	write(1, "\n", 1);

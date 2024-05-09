@@ -6,7 +6,7 @@
 /*   By: mochenna <mochenna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 06:28:21 by mochenna          #+#    #+#             */
-/*   Updated: 2024/05/08 23:26:28 by mochenna         ###   ########.fr       */
+/*   Updated: 2024/05/09 11:50:04 by mochenna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,13 +68,15 @@ void	send(int pid, int c)
 			printstr("illegal pid [please inter correct pid] \n");
 			exit(1);
 		}
-		usleep(450);
+		usleep(500);
 		i--;
 	}
 }
-void send_message(char *s, int pid)
+
+void	send_message(char *s, int pid)
 {
 	int	i;
+
 	i = 0;
 	while (s[i])
 		send(pid, s[i++]);

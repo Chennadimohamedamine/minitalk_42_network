@@ -6,7 +6,7 @@
 /*   By: mochenna <mochenna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 01:56:02 by mochenna          #+#    #+#             */
-/*   Updated: 2024/05/08 23:28:19 by mochenna         ###   ########.fr       */
+/*   Updated: 2024/05/09 11:49:51 by mochenna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,6 @@ int	main(int ac, char **av)
 	pid = convertint(av[1]);
 	if (pid > MAX_PID)
 		return (1);
-	send_message(av[2],pid);
+	send_message(av[2], pid);
 	return (0);
 }

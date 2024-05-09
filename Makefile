@@ -8,8 +8,8 @@ SRCCLIENT_BONUS =  client_bonus.c $(FILE)
 
 OBJ_C = $(SRCCLIENT:%.c=%.o)
 OBJ_S = $(SRCSERVER:%.c=%.o)
-OBJ_C_BONUS = $(SRCCLIENT:%.c=%.o)
-OBJ_S_BONUS = $(SRCSERVER:%.c=%.o)
+OBJ_C_BONUS = $(SRCCLIENT_BONUS:%.c=%.o)
+OBJ_S_BONUS = $(SRCSERVER_BONUS:%.c=%.o)
 
 all : client server
 
