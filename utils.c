@@ -6,33 +6,16 @@
 /*   By: mochenna <mochenna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 06:28:21 by mochenna          #+#    #+#             */
-/*   Updated: 2024/05/09 11:50:04 by mochenna         ###   ########.fr       */
+/*   Updated: 2024/05/10 15:44:03 by mochenna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-int	convertint(char *str)
+void	handling_error(char *s)
 {
-	int		i;
-	long	r;
-	int		s;
-
-	i = 0;
-	s = 1;
-	r = 0;
-	if (str[i] == '+' || str[i] == '-')
-	{
-		if (str[i] == '-')
-			s *= -1;
-		i++;
-	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		r *= 10;
-		r += str[i++] - 48;
-	}
-	return (r * s);
+	printstr(s);
+	exit(1);
 }
 
 void	printstr(char *str)
@@ -64,11 +47,8 @@ void	send(int pid, int c)
 		else
 			k = kill(pid, SIGUSR2);
 		if (k == -1)
-		{
-			printstr("illegal pid [please inter correct pid] \n");
-			exit(1);
-		}
-		usleep(500);
+			handling_error("illegal pid [please inter correct pid] \n");
+		usleep(450);
 		i--;
 	}
 }

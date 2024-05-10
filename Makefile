@@ -19,13 +19,14 @@ server : $(OBJ_S)
 client : $(OBJ_C)
 	cc -Wall -Wextra -Werror $(OBJ_C) -o client
 
-bonus : client_bonus server_bonus
-
 %.o: %.c minitalk.h
 	cc -Wall -Wextra -Werror -o $@ -c $<
 
+bonus : client_bonus server_bonus
+
 server_bonus : $(OBJ_S_BONUS)
 	cc -Wall -Wextra -Werror $(OBJ_S_BONUS) -o server_bonus
+
 client_bonus : $(OBJ_C_BONUS)
 	cc -Wall -Wextra -Werror $(OBJ_C_BONUS) -o client_bonus
 

@@ -6,7 +6,7 @@
 /*   By: mochenna <mochenna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 16:25:27 by mochenna          #+#    #+#             */
-/*   Updated: 2024/05/09 11:49:46 by mochenna         ###   ########.fr       */
+/*   Updated: 2024/05/10 15:42:40 by mochenna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ void	handling_signal(int signal, siginfo_t *info, void *m)
 	{
 		write(1, &c, 1);
 		if (c == 0)
-			kill(info->si_pid, SIGUSR1);
+			if (kill(info->si_pid, SIGUSR1) == -1)
+				handling_error("illegal pid [please inter correct pid] \n");
 		bit = 0;
 		c = 0;
 	}
