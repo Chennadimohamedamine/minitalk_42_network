@@ -6,7 +6,7 @@
 /*   By: mochenna <mochenna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 16:25:24 by mochenna          #+#    #+#             */
-/*   Updated: 2024/05/10 15:47:22 by mochenna         ###   ########.fr       */
+/*   Updated: 2024/05/22 16:23:14 by mochenna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	check(int c, char *s)
 void	handling(int sig)
 {
 	(void)sig;
-	printstr("============= message send ==============\n");
+	printstr(">>============ message send ============<<\n");
 }
 
 int	main(int ac, char **av)
