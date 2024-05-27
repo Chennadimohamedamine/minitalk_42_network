@@ -6,7 +6,7 @@
 /*   By: mochenna <mochenna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 01:56:08 by mochenna          #+#    #+#             */
-/*   Updated: 2024/05/08 16:18:54 by mochenna         ###   ########.fr       */
+/*   Updated: 2024/05/27 23:22:12 by mochenna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,18 @@
 void	handling_signal(int signal, siginfo_t *info, void *m)
 {
 	static pid_t	pid;
-	static int		c;
+	static char		c;
 	static int		bit;
 
 	(void)m;
-	c |= (signal == SIGUSR1);
 	if (pid != info->si_pid)
 	{
 		c = 0;
 		bit = 0;
 	}
-	if (++bit == 8)
+	c |= (signal == SIGUSR1);
+	bit++;
+	if (bit == 8)
 	{
 		write(1, &c, 1);
 		bit = 0;
