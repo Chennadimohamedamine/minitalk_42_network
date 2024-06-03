@@ -6,7 +6,7 @@
 /*   By: mochenna <mochenna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 16:25:24 by mochenna          #+#    #+#             */
-/*   Updated: 2024/05/22 16:23:14 by mochenna         ###   ########.fr       */
+/*   Updated: 2024/06/03 01:44:45 by mochenna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,8 @@ int	main(int ac, char **av)
 	pid = convertint(av[1]);
 	signal(SIGUSR1, handling);
 	if (pid > MAX_PID)
-		handling_error("illegal pid [please inter correct pid] \n");
+		handling_error
+		("illegal pid [this pid can be problem plz enter valid pid] \n");
 	send_message(av[2], pid);
 	return (0);
 }

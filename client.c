@@ -6,7 +6,7 @@
 /*   By: mochenna <mochenna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 01:56:02 by mochenna          #+#    #+#             */
-/*   Updated: 2024/05/10 16:11:09 by mochenna         ###   ########.fr       */
+/*   Updated: 2024/06/03 01:45:34 by mochenna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,8 @@ int	main(int ac, char **av)
 	check(ac, av[1]);
 	pid = convertint(av[1]);
 	if (pid > MAX_PID)
-		handling_error("illegal pid [please inter correct pid] \n");
+		handling_error
+		("illegal pid [ this pid can be problem enter pid less than 99999 ]\n");
 	send_message(av[2], pid);
 	return (0);
 }
